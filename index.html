@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Code Quiz</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="./assets/style.css">
+    </head>
+    <body>
+        <header class="container-fluid mb-5">
+            <div class="row">
+                <div class="col-6">
+                    <button id="view-high-scores" type="button"
+                        class="btn btn-secondary d-inline-block mt-3">View high
+                        Scores</button>
+                </div>
+                <div id="timer-display" class="col-6 d-flex justify-content-end">Time:
+                    75s</div>
+            </div>
+        </header>
+        <main class="quiz-container">
+            <section id="welcome">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="justify-content-center text-center d-flex">Welcome
+                            to the Code Quiz Challenge</h1>
+                        <p class="justify-content-center text-center d-flex">Try
+                            to answer all the questions within the given time
+                            limit. If you answer incorrect, you will lose 10
+                            seconds off the clock.</p>
+                        <button id="start-button" class="mx-auto d-block"
+                            type="button">Start Quiz</button>
+                    </div>
+                </div>
+            </section>
+            <section id="question-container">
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-6 justify-content-center">
+                        <h1 id="question-text">question-text</h1>
+                        <ul id="choices-list" class="list-unstyled mt-4">
+                            <li class="mb-2"><button id="option1" value="0"
+                                    type="button"
+                                    class="btn btn-dark optBtn">Option1</button></li>
+                            <li class="mb-2"><button id="option2" value="1"
+                                    type="button"
+                                    class="btn btn-dark optBtn">Option2</button></li>
+                            <li class="mb-2"><button id="option3" value="2"
+                                    type="button"
+                                    class="btn btn-dark optBtn">Option3</button></li>
+                            <li class="mb-2"><button id="option4" value="3"
+                                    type="button"
+                                    class="btn btn-dark optBtn">Option4</button></li>
+                        </ul>
+                        <div id="show-answer">
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="./assets/script.js"></script>
+    </body>
+</html>
