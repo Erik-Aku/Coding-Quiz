@@ -1,4 +1,6 @@
-#question-container, 
+#question-container,
+#game-over-container,
+#all-time-scores, 
 #show-answer {
     display: none;
 }
