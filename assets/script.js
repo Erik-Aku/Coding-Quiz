@@ -73,10 +73,13 @@ const questions = [
 function startQuiz() {
   welcomeEl.style.display = "none";
   questionContainerEl.style.display = "block";
-  showAnswerEl.style.display = "none";
+  showAnswerEl.style.display = "none"
+  
   currentQuestionIndex = 0;
+
   // Start the timer
   timer = setInterval(updateTimer, 1000);
+
   // Display the first question
   displayQuestion(currentQuestionIndex);
 }
@@ -110,9 +113,8 @@ function checkAnswer(event) {
   //Displays the show-answer section to user
   showAnswerEl.style.display = "block";
 
+ // Clears answer result from previous question
   var ansList = document.getElementById("show-answer");
-
-  // Clears answer result from previous question
   if (ansList.hasChildNodes()) {
     ansList.removeChild(ansList.children[0]);
   }
@@ -135,20 +137,21 @@ function checkAnswer(event) {
     endGame();
   }
 
-  // calls displayQuestion function with the index of the next question
+  // calls displayQuestion function to display next question
   displayQuestion(currentQuestionIndex);
 }
 
-// ends the game and clears timer, hides the question-container and displays game-over-container
+// ends the game and clears timer, hides the question-container, displays game-over-container and displays score
 function endGame() {
   clearInterval(timer);
   questionContainerEl.style.display = "none";
+
   // Display the game over container
   gameOverContainer.style.display = "block";
   scoreEl.textContent = timerValue;
 }
 
-// stores the user's initials, and score in an array, loops through array and creates list elements, appends <li> to <ol>
+// stores the user's initials and score in an array, loops through array and creates list elements, appends <li> to <ol>
 function submitScore(event) {
   event.preventDefault();
   var initials = initialsInput.value;
@@ -190,7 +193,7 @@ optBtn.forEach((item) => {
 //event listener to the save-score button to save initials and score
 submitScoreButton.addEventListener("click", submitScore);
 
-// back button event listener, resets the timer and set welcome page
+// back button event listener, resets the timer and sets welcome page
 goBackButton.addEventListener("click", function () {
   allTimeScoresEl.style.display = "none";
   welcomeEl.style.display = "block";
