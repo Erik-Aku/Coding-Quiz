@@ -1,0 +1,7 @@
+/* Hides sections until js displays them */
+#question-container,
+#game-over-container,
+#all-time-scores, 
+#show-answer {
+    display: none;
+}
