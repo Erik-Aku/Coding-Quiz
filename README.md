@@ -14,7 +14,7 @@ Web Application that is a timed coding quiz with multiple choice questions. This
 
 ## Installation
 
-The project is deployed to GitHub Pages:
+The project is deployed to GitHub Pages: https://erik-aku.github.io/Coding-Quiz/
 
 ## Credits
 
