@@ -19,3 +19,7 @@ The project is deployed to GitHub Pages:
 ## Credits
 
 Utilized chatGPT and Office Hours for help with the displayQuestion, checkAnswer, and submitScore Functions
+
+![Screenshot 2023-10-30 at 8 36 02 AM](https://github.com/Erik-Aku/Coding-Quiz/assets/92487526/eab4b4f5-2c4e-4d27-a431-71dba50faa8d)
+![Screenshot 2023-10-30 at 8 36 23 AM](https://github.com/Erik-Aku/Coding-Quiz/assets/92487526/78b60964-9ccb-4e3a-815b-4dd17d2ecb6a)
+![Screenshot 2023-10-30 at 8 36 39 AM](https://github.com/Erik-Aku/Coding-Quiz/assets/92487526/3612e55e-e125-4834-9dbb-249b76178292)
