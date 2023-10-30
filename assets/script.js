@@ -26,7 +26,6 @@ var timerValue = 75;
 var currentQuestionIndex = 0;
 var scoreList = [];
 
-
 const questions = [
   {
     question: "Inside which HTML element do we put the JavaScript?",
@@ -41,22 +40,33 @@ const questions = [
   },
 
   {
-    question: "The condition in an if / else statement is enclosed within ____.",
-    options: ["1. quotes", "2. curly brackets", "3. parentheses", "4. square brackets"],
-    answer: "2"
+    question:
+      "The condition in an if / else statement is enclosed within ____.",
+    options: [
+      "1. quotes",
+      "2. curly brackets",
+      "3. parentheses",
+      "4. square brackets",
+    ],
+    answer: "2",
   },
 
   {
     question: "Arrays in Javascript can be used to store ____.",
-    options: ["1. numbers and strings", "2. other arrays", "3. booleans", "4. all of the above"],
-    answer: "3"
+    options: [
+      "1. numbers and strings",
+      "2. other arrays",
+      "3. booleans",
+      "4. all of the above",
+    ],
+    answer: "3",
   },
 
   {
     question: "Which event occurs when the user clicks on an HTML element?",
     options: ["1. onmouseover", "2. onchange", "3. onmouseclick", "4. onclick"],
-    answer: "3"
-  }
+    answer: "3",
+  },
 ];
 
 // Starts quiz and timer, displays first question
@@ -83,7 +93,7 @@ function updateTimer() {
   }
 }
 
-// checks if there are questions left and displays the question and multiple choice answers 
+// checks if there are questions left and displays the question and multiple choice answers
 function displayQuestion(index) {
   if (index < questions.length) {
     questionText.textContent = questions[index].question;
@@ -107,7 +117,7 @@ function checkAnswer(event) {
     ansList.removeChild(ansList.children[0]);
   }
 
-// creates <p> element and appends
+  // creates <p> element and appends
   var answerEl = document.createElement("p");
   showAnswerEl.appendChild(answerEl);
 
@@ -125,7 +135,7 @@ function checkAnswer(event) {
     endGame();
   }
 
-// calls displayQuestion function with the index of the next question
+  // calls displayQuestion function with the index of the next question
   displayQuestion(currentQuestionIndex);
 }
 
@@ -140,37 +150,36 @@ function endGame() {
 
 // stores the user's initials, and score in an array, loops through array and creates list elements, appends <li> to <ol>
 function submitScore(event) {
-    event.preventDefault();
-    var initials = initialsInput.value;
+  event.preventDefault();
+  var initials = initialsInput.value;
 
-    gameOverContainer.style.display = "none";
-    allTimeScoresEl.style.display = "block";
+  gameOverContainer.style.display = "none";
+  allTimeScoresEl.style.display = "block";
 
-    scoreList.push({initials: initials, score: timerValue });
+  scoreList.push({ initials: initials, score: timerValue });
 
-    listOfScoresEl.innerHTML = '';
+  listOfScoresEl.innerHTML = "";
 
-    for (var i = 0; i <scoreList.length; i++) {
-        var li = document.createElement("li");
-        li.textContent = `${scoreList[i].initials}: ${scoreList[i].score}`;
-        listOfScoresEl.append(li);
-    }
+  for (var i = 0; i < scoreList.length; i++) {
+    var li = document.createElement("li");
+    li.textContent = `${scoreList[i].initials}: ${scoreList[i].score}`;
+    listOfScoresEl.append(li);
+  }
 
-    saveScores();
-    showScores();
-
+  saveScores();
+  showScores();
 }
 
 function saveScores() {
-    localStorage.setItem("scoreList", JSON.stringify(scoreList));
+  localStorage.setItem("scoreList", JSON.stringify(scoreList));
 }
 
 function showScores() {
-    var savedScores = JSON.parse(localStorage.getItem("scoreList"));
+  var savedScores = JSON.parse(localStorage.getItem("scoreList"));
 
-    if (savedScores !== null) {
-        scoreList = savedScores;
-    }
+  if (savedScores !== null) {
+    scoreList = savedScores;
+  }
 }
 
 // Creates an event listener for each answer button and calls the check answer function
@@ -182,17 +191,17 @@ optBtn.forEach((item) => {
 submitScoreButton.addEventListener("click", submitScore);
 
 // back button event listener, resets the timer and set welcome page
-goBackButton.addEventListener('click', function() {
-    allTimeScoresEl.style.display = "none";
-    welcomeEl.style.display = "block";
-    timerValue = 75;
-    timerDisplay.textContent = `Time: ${timerValue}`;
+goBackButton.addEventListener("click", function () {
+  allTimeScoresEl.style.display = "none";
+  welcomeEl.style.display = "block";
+  timerValue = 75;
+  timerDisplay.textContent = `Time: ${timerValue}`;
 });
 
 // View High Score button in header to show high scores
-viewHighScoresEl.addEventListener("click", function() {
-    welcomeEl.style.display = "none";
-    allTimeScoresEl.style.display = "block";
+viewHighScoresEl.addEventListener("click", function () {
+  welcomeEl.style.display = "none";
+  allTimeScoresEl.style.display = "block";
 });
 
 // Add click event listener to the start button
